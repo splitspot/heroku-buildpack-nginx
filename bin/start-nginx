@@ -5,6 +5,7 @@ rm -f $psmgr
 mkfifo $psmgr
 
 # Evaluate config to get variables
+echo "evaluating config"
 bin/rails nginx:generate_config > config/nginx.conf
 
 n=1
