@@ -5,7 +5,8 @@ rm -f $psmgr
 mkfifo $psmgr
 
 # Evaluate config to get $PORT
-bin/rails nginx:generate_config > config/nginx.conf
+echo "evaluating config"
+bin/rails nginx:generate_config
 
 n=1
 while getopts :f option ${@:1:2}
